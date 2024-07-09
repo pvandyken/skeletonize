@@ -1,0 +1,15 @@
+"""Prepdwi_recon
+
+"""
+configfile: 'config/snakebids.yml'
+
+
+include: 'rules/setup.smk'
+
+
+
+include: 'rules/tbss.smk'
+
+
+rule group:
+    input: inputs[comp].expand(rules.project_onto_skeleton.output)
